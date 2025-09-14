@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ title }}</h1>
+
+        <!-- Bulk Table Results -->
+        {% if tables %}
+            <h2>Prediction Results</h2>
+            {% for table in tables %}
+                <div class="table-container">{{ table|safe }}</div>
+            {% endfor %}
+  
+            {% if download_link %}
+                <a href="{{ url_for('download_file', filename=download_link) }}" class="download-btn">⬇️ Download CSV</a>
+            {% endif %}
+        {% endif %}
+
+
+        <!-- Single/Live Prediction -->
+        {% if prediction %}
+            <p class="result-text">{{ prediction }}</p>
+        {% endif %}
+
+        <a href="/" class="back-btn">🔙 Go Back</a>
+    </div>
+</body>
+</html>

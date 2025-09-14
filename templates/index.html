@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Air Quality Prediction Dashboard</title>
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .card {
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      margin-bottom: 25px;
+    }
+    .card-header {
+      border-radius: 15px 15px 0 0;
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: white;
+    }
+    .btn-custom {
+      background: #4e54c8;
+      color: white;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+    .btn-custom:hover {
+      background: #6366f1;
+      transform: scale(1.05);
+    }
+    footer {
+      margin-top: 30px;
+      text-align: center;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container py-5">
+    <h1 class="text-center text-white mb-4">🌍 Air Quality Prediction Dashboard</h1>
+
+    <!-- Manual Prediction -->
+<!-- Manual Prediction -->
+<div class="card">
+  <div class="card-header bg-primary">Manual Prediction</div>
+  <div class="card-body">
+    <form method="POST" action="/predict_manual">
+      <div class="mb-3">
+        <label for="Datetime" class="form-label">Datetime</label>
+        <input type="datetime-local" name="Datetime" class="form-control" required>
+      </div>
+      <div class="mb-3">
+        <label for="City" class="form-label">City</label>
+        <input type="text" name="City" class="form-control" placeholder="e.g. Delhi" required>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3"><label>PM2.5</label><input type="number" step="any" name="PM2.5" class="form-control" required></div>
+        <div class="col-md-4 mb-3"><label>PM10</label><input type="number" step="any" name="PM10" class="form-control" required></div>
+        <div class="col-md-4 mb-3"><label>NO</label><input type="number" step="any" name="NO" class="form-control" required></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3"><label>NO2</label><input type="number" step="any" name="NO2" class="form-control" required></div>
+        <div class="col-md-4 mb-3"><label>NOx</label><input type="number" step="any" name="NOx" class="form-control" required></div>
+        <div class="col-md-4 mb-3"><label>NH3</label><input type="number" step="any" name="NH3" class="form-control" required></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3"><label>CO</label><input type="number" step="any" name="CO" class="form-control" required></div>
+        <div class="col-md-4 mb-3"><label>SO2</label><input type="number" step="any" name="SO2" class="form-control" required></div>
+        <div class="col-md-4 mb-3"><label>O3</label><input type="number" step="any" name="O3" class="form-control" required></div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-4 mb-3"><label>Benzene</label><input type="number" step="any" name="Benzene" class="form-control" required></div>
+        <div class="col-md-4 mb-3"><label>Toluene</label><input type="number" step="any" name="Toluene" class="form-control" required></div>
+        <div class="col-md-4 mb-3"><label>Xylene</label><input type="number" step="any" name="Xylene" class="form-control" required></div>
+      </div>
+
+      <button type="submit" class="btn btn-custom w-100">🔮 Predict AQI</button>
+    </form>
+  </div>
+</div>
+
+
+    <!-- CSV Upload -->
+    <div class="card">
+      <div class="card-header bg-success">CSV Upload</div>
+      <div class="card-body">
+        <form method="POST" action="/predict_csv" enctype="multipart/form-data">
+          <div class="mb-3">
+            <input type="file" name="file" class="form-control" accept=".csv" required>
+          </div>
+          <button type="submit" class="btn btn-custom w-100">📂 Upload & Predict</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Real-Time API -->
+    <div class="card">
+      <div class="card-header bg-warning">Real-Time API Prediction</div>
+      <div class="card-body">
+        <form method="POST" action="/predict_api">
+          <div class="mb-3">
+            <input type="text" name="city" class="form-control" placeholder="Enter city (e.g. Mumbai)" required>
+          </div>
+          <button type="submit" class="btn btn-custom w-100">🌐 Get Real-Time AQI</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>💡 Developed as AICTE Internship Project | Environmental Monitoring & Pollution Control | jhagauravkr</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
