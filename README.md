@@ -153,6 +153,7 @@ Once downloaded, place the CSV file in the project directory before running the 
   - `city_encoder.pkl`
   - `aqi_bucket_encoder.pkl`
 
+Download models [Models](https://drive.google.com/drive/folders/1o04KUowSfOUnVbeVtkVlYeerVbACLY8b?usp=sharing)
 ---
 
 ## 📊 Results & Insights
