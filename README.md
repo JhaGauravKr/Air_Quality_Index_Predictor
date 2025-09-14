@@ -163,3 +163,81 @@ Once downloaded, place the CSV file in the project directory before running the 
 
 ---
 
+## 🛠️ Week 3 Objectives
+- ✅ Deploy ML models in a **Flask web application**.  
+- ✅ Provide users with **three prediction modes**:
+  1. **Manual Input Prediction** → Enter pollutant values to get AQI.  
+  2. **CSV Upload** → Upload datasets for bulk AQI predictions with downloadable results.  
+  3. **Real-time API Prediction** → Enter a city name and get **live AQI values**.  
+- ✅ Improve **frontend design** (modern UI, back buttons, clean result pages).  
+- ✅ Add **download option** for CSV predictions.  
+- ✅ Prepare the project for **presentation and deployment**.
+
+---
+
+## 🌐 Deployment
+- Flask-based app runs locally and can be deployed on **Heroku/AWS**.  
+- Deployed App Link: [Insert your live link here]  
+- GitHub Repository: [Insert repo link here]  
+
+---
+
+## ⚙️ Tools & Technologies
+- **Backend**: Flask, Python  
+- **ML Models**: Random Forest Regressor & Classifier (best performing models)  
+- **Frontend**: HTML, CSS (Bootstrap styled)  
+- **Libraries**: Pandas, NumPy, Matplotlib, Scikit-learn, XGBoost, Joblib  
+- **API**: OpenWeatherMap API (for real-time AQI retrieval)  
+
+---
+
+## 🚀 Features Implemented in Week 3
+### 🔹 1. Manual Prediction
+- User enters pollutant levels manually (PM2.5, PM10, NO2, etc.).
+- App predicts:
+  - **AQI value** (numeric)  
+  - **AQI Category** (Good, Moderate, Unhealthy, etc.)  
+
+### 🔹 2. CSV Upload Prediction
+- User uploads `.csv` file with pollutant data.  
+- App processes all rows → predicts AQI for each entry.  
+- Results displayed in a **table**.  
+- Added **Download CSV option** for users.  
+
+### 🔹 3. Real-time API Prediction
+- User enters a **city name**.  
+- App fetches live pollutant data using **OpenWeather API**.  
+- Predicts AQI value + AQI Category instantly.  
+
+---
+
+## 📊 Results Summary
+- Regression (AQI value):
+  - Random Forest RMSE: **13.57**  
+- Classification (AQI bucket):
+  - Random Forest Accuracy: **94.8%**  
+
+---
+
+## 🖥️ UI Enhancements
+- Modern, clean design using **Bootstrap CSS**.  
+- Separate result pages for:
+  - Manual Prediction  
+  - CSV Prediction  
+  - API Prediction  
+- Back buttons for easy navigation.  
+- ✅ User-friendly workflow for both technical and non-technical users.  
+
+---
+
+## 📌 Conclusion (Week 3)
+- Achieved a **fully functional AQI Prediction System**.  
+- Integrated **ML models + Flask frontend + API**.  
+- Users can now:
+  - Upload datasets  
+  - Enter manual inputs  
+  - Fetch live AQI  
+- System is **ready for presentation & real-world demonstration**.  
+
+---
+
